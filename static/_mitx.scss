@@ -182,6 +182,8 @@ $footer_margin: ($baseline/4) 0;
 //  CSS BG Images
 //-----------------
 $homepage-bg-image: '../themes/mitx/images/mitx-pano4.jpg';
+// Resize 
+body .find-courses header.search, .university-profile header.search { height: 150px; }
 
 $login-banner-image: none;
 $register-banner-image: none;
@@ -206,7 +208,10 @@ $video-thumb-url: '../themes/mitx/images/stanford-video-thumb.png';
 //-----------------
 //  Hiding modal
 //-----------------
-.inner-wrapper {
+.home>header .title {
+visibility: hidden;
+}
+.home>header .media {
 visibility: hidden;
 }
 
