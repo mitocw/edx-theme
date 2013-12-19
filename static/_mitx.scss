@@ -202,3 +202,19 @@ $video-thumb-url: '../themes/mitx/images/stanford-video-thumb.png';
     margin: 0 !important;
     text-align: right;
 }
+
+//-----------------
+//  Hiding modal
+//-----------------
+.inner-wrapper {
+visibility: hidden;
+}
+
+//-----------------
+//  courses image adjustment
+//-----------------
+header.search {
+height: 150px;
+margin-top: 0px;
+background-position: center top !important;
+}
