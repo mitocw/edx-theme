@@ -208,11 +208,8 @@ $video-thumb-url: '../themes/mitx/images/stanford-video-thumb.png';
 //-----------------
 //  Hiding modal
 //-----------------
-.home>header .title {
-visibility: hidden;
-}
-.home>header .media {
-visibility: hidden;
+section.find-courses header.search div.main-search {
+    visibility: hidden;
 }
 
 //-----------------
