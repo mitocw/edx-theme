@@ -1,27 +1,27 @@
 /****************************************************************************************************
-*   Stanford Theming File
+*   MItx Theming File
 *
-*   Contains all the theme color definitions for the Stanford Open Source MOOC Project
+*   Contains all the theme color definitions for the MITx Open Source MOOC Project
 *
 ****************************************************************************************************/
 
 //-----------------
-//  Color variables (from Stanford palette unless noted)
+//  Color variables (from MIT palette unless noted)
 //-----------------
 
 //Cardinal Color Variables
-$cardinal-red: #8C1515;
-$dark-red: #820000; //Link Color
-$cardinal-light: #c83737; //Selected Header BG Color, ie. calendar        ***Custom, not from palette***
-$cardinal-bg: #e9afaf; //Selected Content BG Color, ie. calendar          ***Custom, not from palette***
+$cardinal-red: #A31F34;
+$dark-red: #A31F34; //Link Color
+$cardinal-light: #A31F34; //Selected Header BG Color, ie. calendar        ***Custom, not from palette***
+$cardinal-bg: #A31F34; //Selected Content BG Color, ie. calendar          ***Custom, not from palette***
 
-//Beige Color Variables
-$beige: #9d9573;
+//MIT PMS 420 Color Variables
+$beige: #c2c0bf;
 $beige-60: lighten($beige, 18.5%); //Main Border/HR Color
 $beige-25: lighten($beige, 25%); 
 
-//Sandstone Color Variables
-$sandstone: #ddcf99;
+//MIT PMS 424 Color Variables
+$sandstone: #8a8b8c;
 $sandstone-50: lighten($sandstone, 9%);
 $sandstone-25: lighten($sandstone, 20%); //Important Heading BG Color 
 
@@ -181,12 +181,12 @@ $footer_margin: ($baseline/4) 0;
 //-----------------
 //  CSS BG Images
 //-----------------
-$homepage-bg-image: '../themes/mitxinator/images/doofenshmirtz-pano.jpg';
+$homepage-bg-image: '../themes/mitx/images/mitx-pano4.jpg';
 
 $login-banner-image: none;
 $register-banner-image: none;
 
-$video-thumb-url: '../themes/mitxinator/images/blank-video-thumb.png';
+$video-thumb-url: '../themes/mitx/images/stanford-video-thumb.png';
 
 //-----------------
 //  Mixin Styles
