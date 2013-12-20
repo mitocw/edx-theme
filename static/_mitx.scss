@@ -173,7 +173,7 @@ $form-bg-color: $gray-1;
 $modal-bg-color: $gray-1;
 
 //TOP HEADER IMAGE MARGIN
-$header_image_margin: -77px;
+$header_image_margin: 0px;
 
 //FOOTER MARGIN
 $footer_margin: ($baseline/4) 0;
@@ -217,6 +217,6 @@ section.find-courses header.search div.main-search {
 //-----------------
 header.search {
 height: 150px;
-margin-top: 0px;
+margin-top: 132px;
 background-position: center top !important;
 }
