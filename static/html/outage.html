@@ -18,7 +18,7 @@
   background-color:#888888;
   color:#000000;
   }
-  #topbar {
+  .topnav {
   display:block;
   padding:2px 0px 3px 30px;
   margin:0px;
@@ -28,20 +28,13 @@
   #middle {
   position: relative;
   top: 50%;
-  margin: 0px 0px 0px -300px;
-  width: 60%;
+  margin: -50px 0px 0px -300px;
   left: 50%;
   background: white;
   width: 600px;
-  height: 150px;
   padding: 3px 0px 0px 20px;
   -moz-border-radius: 15px;
   border-radius: 15px;
-  }
-  #logo {
-  position: absolute;
-  top: 50px;
-  left: -132px;
   }
   p, li, input {
   font-size:85%;
@@ -51,6 +44,7 @@
   margin-left:0px;
   padding-left:20px;
   padding-bottom:0.75em;
+  list-style:none;
   }
   li {
   margin-left:0px;
@@ -84,13 +78,18 @@
   <script type="text/javascript">
     $(document).snowfall();
   </script>
-  <div id="topbar">
-    <a href="http://web.mit.edu/">massachusetts institute of
-    technology</a><br />
+  <ul class="topnav">
+      <a href="https://mitx.mit.edu/"><img alt="MITx logo" src=
+      "http://github.com/mitocw/edx-theme/raw/mitx/static/images/mitxlogo.png" width="104" height="32"
+      border="0" /></a>
+  <li><a href="http://web.mit.edu/">massachusetts institute of
+    technology</a><li/>
+<ul>
     <a href="http://odl.mit.edu/"><font color="purple">-office of
-    digital learning</font></a><br/>
+    digital learning</font></a><li/>
+    <ul>
     <a href="http://mitx.mit.edu/">--MITx</a>
-  </div>
+</ul></ul></ul>
 
   <div id="middle">
     <h1>Temporary Service Outage</h1>
@@ -102,11 +101,6 @@
         <li>For viewing your course content, please visit <a href="https://lms-rp.mitx.mit.edu">studio-rp.mitx.mit.edu</a>.</li>
     </ul>
 
-    <div id="logo">
-      <a href="https://mitx.mit.edu/"><img alt="MITx logo" src=
-      "http://github.com/mitocw/edx-theme/raw/mitx/static/images/mitxlogo.png" width="104" height="32"
-      border="0" /></a>
-    </div>
   </div>
 </body>
 </html>
