@@ -8,7 +8,7 @@
 
 ## TODO: this will eventually be moved to the Sass
 <%block name="navigation_logo">
-<img src="${static.url('themes/6004/images/6004_logo.png')}" height="58" alt="Home Page" />
+<img src="${static.url('themes/mitx/images/6004_logo.png')}" height="58" alt="Home Page" />
 </%block>
 
 ## We don't want extra links inside the navigation dropdown
@@ -26,7 +26,7 @@
   <li class="nav-global-01">
 	<a href="${marketing_link('COURSES')}">Find Courses</a>
   </li>
-  %if settings.MITX_FEATURES.get('ENABLE_SYSADMIN_DASHBOARD','') and user.is_staff:
+  %if settings.FEATURES.get('ENABLE_SYSADMIN_DASHBOARD','') and user.is_staff:
   <li>
 	<a href="${reverse('sysadmin')}">Sysadmin</a>
   </li>
