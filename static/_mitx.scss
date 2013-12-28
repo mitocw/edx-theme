@@ -181,9 +181,10 @@ $footer_margin: ($baseline/4) 0;
 //-----------------
 //  CSS BG Images
 //-----------------
-$homepage-bg-image: '../themes/mitx/images/mitx-pano4.jpg';
+// $homepage-bg-image: '../themes/mitx/images/mitx-pano4.jpg';
+$homepage-bg-image: '../themes/mitx/images/mitx-pano4grey2.jpeg';
 // Resize 
-body .find-courses header.search, .university-profile header.search { height: 150px; }
+body .find-courses header.search, .university-profile header.search { height: 100px; }
 
 $login-banner-image: none;
 $register-banner-image: none;
@@ -216,7 +217,7 @@ section.find-courses header.search div.main-search {
 //  courses image adjustment
 //-----------------
 header.search {
-height: 150px;
+height: 100px;
 margin-top: 132px;
 background-position: center top !important;
 }
