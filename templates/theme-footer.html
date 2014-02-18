@@ -4,7 +4,8 @@
   <footer>
     <div class="colophon">
       <nav class="nav-colophon">
-		<a id="loloadx_allb" class="loloadx_all" rel="leanmodal" href="#loloaddialog">Load Local Courses</a>
+		<span id="loloadx_course_span" style="display: none;"><a id="loloadx_course" class="loloadx_course" rel="leanmodal" href="#loloaddialog">Load This Local Course</a> |</span>
+		<a id="loloadx_allb" class="loloadx_all" rel="leanmodal" href="#loloaddialog">Load All Local Courses</a>		
       </nav>
     </div>
     <div class="references">
@@ -15,9 +16,10 @@
 <script>
 $(document).ready(function () {
 	accessible_modal("#loloaddialog", "#loloaddialog .close_modal", "#loloaddialog", "#content");
-    console.debug('Am I running?');
 	// Methods for posting to a loloadx Web server running
 	// on the same host that edx-platform is running on
+
+    // Load all courses
 	$('.loloadx_all').each(function() { $(this).click(function(event) {
 		event.preventDefault();
 		var loloadx_url = 'http://' + window.location.hostname + ':55545/load_all';
@@ -33,9 +35,38 @@ $(document).ready(function () {
 			},
 			error: function(result) {
 				console.debug(result)
-				$('#loloadxdialog_body').html('<h1>Failed to Load Courses</h1><pre style="color: #333">' + result + '</pre>');
+				$('#loloadxdialog_body').html('<h1>Failed to Load Courses</h1><p>Is the web_loloadx service running (start with: sudo start web_loloadx)?</p><pre style="color: #333">Status code:' + result.status + '</pre>');
 			}});
 	});
    });
+
+	// Attempt to load just one course
+	var course_url=window.location.pathname;
+	if(course_url.substring(1,8) == 'courses') {
+		console.debug('In a course');
+		$('#loloadx_course_span').css({display: 'inline'});
+	}
+	$('.loloadx_course').each(function() { $(this).click(function(event) {
+		event.preventDefault();
+		var loloadx_url = 'http://' + window.location.hostname + ':55545/load_course';
+        console.debug('Running ajax call now for one course.');
+		$.ajax({
+			type: "POST",
+			headers: null,
+			data: { course_id: course_url.substring(9) },
+			url: loloadx_url,
+			dataType: 'text',
+			success: function(result) {
+				console.debug(result)
+				$('#loloadxdialog_body').html('<pre style="color: #333">' + result + '</pre>')
+			},
+			error: function(result) {
+				console.debug(result)
+				$('#loloadxdialog_body').html('<h1>Failed to Load Courses</h1><p>Is the web_loloadx service running (start with: sudo start web_loloadx)?</p><pre style="color: #333">Status code:' + result.status + '</pre>');
+			}});
+	});
+   });
+
+
  });
 </script>
