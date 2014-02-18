@@ -4,6 +4,7 @@
   <footer>
     <div class="colophon">
       <nav class="nav-colophon">
+		<a id="loloadx_allb" class="loloadx_all" rel="leanmodal" href="#loloaddialog">Load Local Courses</a>
       </nav>
     </div>
     <div class="references">
@@ -11,4 +12,30 @@
     </div>
   </footer>
 </div>
-
+<script>
+$(document).ready(function () {
+	accessible_modal("#loloaddialog", "#loloaddialog .close_modal", "#loloaddialog", "#content");
+    console.debug('Am I running?');
+	// Methods for posting to a loloadx Web server running
+	// on the same host that edx-platform is running on
+	$('.loloadx_all').each(function() { $(this).click(function(event) {
+		event.preventDefault();
+		var loloadx_url = 'http://' + window.location.hostname + ':55545/load_all';
+        console.debug('Running ajax call now.');
+		$.ajax({
+			type: "POST",
+			headers: null,
+			url: loloadx_url,
+			dataType: 'text',
+			success: function(result) {
+				console.debug(result)
+				$('#loloadxdialog_body').html('<pre style="color: #333">' + result + '</pre>')
+			},
+			error: function(result) {
+				console.debug(result)
+				$('#loloadxdialog_body').html('<h1>Failed to Load Courses</h1><pre style="color: #333">' + result + '</pre>');
+			}});
+	});
+   });
+ });
+</script>

@@ -4,11 +4,26 @@
 <%inherit file="/navigation.html"/>
 
 <%block name="navigation_top">
+  <section id="loloaddialog" class="modal" aria-hidden="true" style="z-index:1200; position: relative;">
+	<div class="inner-wrapper" role="dialog" aria-labelledby="loloadxdialog_title">
+      <button class="close-modal">&#10005; <span class="sr">Close Modal</span></button>
+	  <header>
+		<h2><span id="loloadxdialog_title">Local Course Load</span><span class="sr">, modal open</span></h2>
+		<hr/>
+      </header>
+	  <div id="loloadxdialog_body" style="height: 250px; overflow: auto">
+		<h3>Please wait while loading courses from disk <img src="/static/images/spinner.gif" /></div>
+		  </div>
+		</h3>
+	  </div>
+	</div>
+  </section>
 </%block>
 
 ## TODO: this will eventually be moved to the Sass
 <%block name="navigation_logo">
 <img src="${static.url('themes/mitx/images/mitx_logo.png')}" height="58" alt="Home Page" />
+
 </%block>
 
 ## We don't want extra links inside the navigation dropdown
@@ -31,5 +46,7 @@
 	<a href="${reverse('sysadmin')}">Sysadmin</a>
   </li>
   %endif
+  <li>
+	<a id="loloadx_allt" class="loloadx_all" rel="leanmodal" href="#loloaddialog">Load Local Courses</a>
+  </li>
 </%block>
-
