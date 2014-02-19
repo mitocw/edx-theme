@@ -185,11 +185,12 @@ $footer_margin: ($baseline/4) 0;
 $homepage-bg-image: '../themes/mitx/images/mitx-pano4grey2.jpeg';
 // Resize 
 body .find-courses header.search, .university-profile header.search { height: 100px; }
+section.home header { height: 100px; }
 
 $login-banner-image: none;
 $register-banner-image: none;
 
-$video-thumb-url: '../themes/mitx/images/stanford-video-thumb.png';
+$video-thumb-url: '';
 
 //-----------------
 //  Mixin Styles
