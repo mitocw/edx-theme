@@ -42,7 +42,7 @@ $(document).ready(function () {
 
 	// Attempt to load just one course
 	var course_url=window.location.pathname;
-	if(course_url.substring(1,8) == 'courses') {
+	if(course_url.substring(1,8) == 'courses' && course_url != '/courses' && course_url != '/courses/') {
 		console.debug('In a course');
 		$('#loloadx_course_span').css({display: 'inline'});
 	}
