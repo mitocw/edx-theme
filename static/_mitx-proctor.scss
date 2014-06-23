@@ -181,15 +181,16 @@ $footer_margin: ($baseline/4) 0;
 //-----------------
 //  CSS BG Images
 //-----------------
-// $homepage-bg-image: '../themes/mitx/images/mitx-pano4.jpg';
-$homepage-bg-image: '../themes/mitx/images/mitx-pano4grey2.jpeg';
+$homepage-bg-image: url('../themes/mitx-proctor/images/mitx-pano4grey2.jpeg');
 // Resize 
-body .find-courses header.search, .university-profile header.search { height: 100px; }
+#content > section.home > header { height: 100px; }
+// Hide Video title
+#content > section.home > header > div > div { visibility: hidden; }
 
 $login-banner-image: none;
 $register-banner-image: none;
 
-$video-thumb-url: '../themes/mitx/images/stanford-video-thumb.png';
+$video-thumb-url: url('../themes/mitx-proctor/images/video-thumb.png');
 
 //-----------------
 //  Mixin Styles
