@@ -1,0 +1,8 @@
+<%! from django.utils.translation import ugettext as _ %>
+<%inherit file="../main.html" />
+
+<%block name="pagetitle">${_("This Course Unavailable From Your Location")}</%block>
+
+<section class="outside-app">
+<p>${_("Our system indicates that you are trying to access a course from an unauthorized location.")}</p>
+</section>
