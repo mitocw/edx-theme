@@ -88,6 +88,9 @@ $site-status-color: $cardinal-bg;
 $header-graphic-super-color: $dark-red;
 $header-graphic-sub-color: $lighter-base-font-color;
 
+$courseware-hover-color: $dark-red;
+$courseware-navigation-color: $lighter-base-font-color;
+
 $header-link-color: $dark-red;
 $header-link-hover: $cardinal-light;
 
@@ -173,7 +176,7 @@ $form-bg-color: $gray-1;
 $modal-bg-color: $gray-1;
 
 //TOP HEADER IMAGE MARGIN
-$header_image_margin: -77px;
+$header_image_margin: 0px;
 
 //FOOTER MARGIN
 $footer_margin: ($baseline/4) 0;
@@ -199,4 +202,8 @@ $register-banner-image: none;
 @mixin footer_references_style {
     margin: 0 !important;
     text-align: right;
+}
+
+header.global-new {
+  border-bottom: 1px solid #8a8c8f;
 }
