@@ -219,8 +219,16 @@ header.global-new {
     border-color: $dark-red;
 }
 
+header.global.slim {
+    border-color: $sandstone !important;
+}
+
 header.global-new .nav-global li a, header.global-new .nav-courseware li a {
 	border-color: $sandstone;
+}
+
+header.global.slim h2 {
+	color: $dark-red !important;
 }
 
 //-----------------
