@@ -1,27 +1,27 @@
 /****************************************************************************************************
-*   Stanford Theming File
+*   MItx Theming File
 *
-*   Contains all the theme color definitions for the Stanford Open Source MOOC Project
+*   Contains all the theme color definitions for the MITx Open Source MOOC Project
 *
 ****************************************************************************************************/
 
 //-----------------
-//  Color variables (from Stanford palette unless noted)
+//  Color variables (from MIT palette unless noted)
 //-----------------
 
 //Cardinal Color Variables
-$cardinal-red: #8C1515;
-$dark-red: #820000; //Link Color
-$cardinal-light: #c83737; //Selected Header BG Color, ie. calendar        ***Custom, not from palette***
-$cardinal-bg: #e9afaf; //Selected Content BG Color, ie. calendar          ***Custom, not from palette***
+$cardinal-red: #A31F34;
+$dark-red: #A31F34; //Link Color
+$cardinal-light: #A31F34; //Selected Header BG Color, ie. calendar        ***Custom, not from palette***
+$cardinal-bg: #A31F34; //Selected Content BG Color, ie. calendar          ***Custom, not from palette***
 
-//Beige Color Variables
-$beige: #9d9573;
+//MIT PMS 420 Color Variables
+$beige: #c2c0bf;
 $beige-60: lighten($beige, 18.5%); //Main Border/HR Color
 $beige-25: lighten($beige, 25%); 
 
-//Sandstone Color Variables
-$sandstone: #ddcf99;
+//MIT PMS 424 Color Variables
+$sandstone: #8a8b8c;
 $sandstone-50: lighten($sandstone, 9%);
 $sandstone-25: lighten($sandstone, 20%); //Important Heading BG Color 
 
@@ -91,6 +91,9 @@ $header-graphic-sub-color: $lighter-base-font-color;
 $header-link-color: $dark-red;
 $header-link-hover: $cardinal-light;
 
+$courseware-hover-color: $dark-red;
+$courseware-navigation-color: $lighter-base-font-color;
+
 $button-color: $cardinal-red;
 $button-archive-color: $gray-3;
 
@@ -145,17 +148,17 @@ $action-secondary-disabled-fg: $gray;
 
 //
 
-$border-color-1: $beige-60;
-$border-color-2: $beige-60;
-$border-color-3: $beige-60;
-$outer-border-color: $beige-60;
+$border-color-1: $beige;
+$border-color-2: $beige;
+$border-color-3: $beige;
+$outer-border-color: $beige;
 
 $sidebar-color: $gray-1;
 
 $dashboard-profile-header-image: none;
 $dashboard-profile-header-color: $sandstone-25;
 $dashboard-profile-color: $gray-3;
-$dot-color: $beige-60;
+$dot-color: $beige;
 
 $course-bg-color: $gray-3;
 $course-bg-image: none;
@@ -173,7 +176,7 @@ $form-bg-color: $gray-1;
 $modal-bg-color: $gray-1;
 
 //TOP HEADER IMAGE MARGIN
-$header_image_margin: -77px;
+$header_image_margin: 0px;
 
 //FOOTER MARGIN
 $footer_margin: ($baseline/4) 0;
@@ -181,12 +184,20 @@ $footer_margin: ($baseline/4) 0;
 //-----------------
 //  CSS BG Images
 //-----------------
-$homepage-bg-image: '../themes/stanford/images/stanford-pano.jpg';
+$homepage-bg-image: url('../themes/partners/images/mitx-pano4grey2.jpeg');
+
+// Resize 
+body .find-courses header.search, .university-profile header.search { height: 100px; }
+#content > section.home > header { height: 100px; }
+
+// Hide Video title
+#content > section.home > header > div > div { visibility: hidden; }
 
 $login-banner-image: none;
 $register-banner-image: none;
 
-$video-thumb-url: '../themes/stanford/images/stanford-video-thumb.png';
+// Hide Register Now Link
+body > header > nav > ol.left.nav-global > li.nav-global-04 { display: none; }
 
 //-----------------
 //  Mixin Styles
@@ -201,4 +212,37 @@ $video-thumb-url: '../themes/stanford/images/stanford-video-thumb.png';
 @mixin footer_references_style {
     margin: 0 !important;
     text-align: right;
+}
+
+// Header navigation style
+header.global-new {
+    border-color: $dark-red;
+}
+
+header.global.slim {
+    border-color: $sandstone !important;
+}
+
+header.global-new .nav-global li a, header.global-new .nav-courseware li a {
+	border-color: $sandstone;
+}
+
+header.global.slim h2 {
+	color: $dark-red !important;
+}
+
+//-----------------
+//  Hiding modal
+//-----------------
+section.find-courses header.search div.main-search {
+    visibility: hidden;
+}
+
+//-----------------
+//  courses image adjustment
+//-----------------
+header.search {
+height: 100px;
+margin-top: 132px;
+background-position: center top !important;
 }
