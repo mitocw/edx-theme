@@ -91,6 +91,9 @@ $header-graphic-sub-color: $lighter-base-font-color;
 $header-link-color: $dark-red;
 $header-link-hover: $cardinal-light;
 
+$courseware-hover-color: $dark-red;
+$courseware-navigation-color: $lighter-base-font-color;
+
 $button-color: $cardinal-red;
 $button-archive-color: $gray-3;
 
@@ -145,17 +148,17 @@ $action-secondary-disabled-fg: $gray;
 
 //
 
-$border-color-1: $beige-60;
-$border-color-2: $beige-60;
-$border-color-3: $beige-60;
-$outer-border-color: $beige-60;
+$border-color-1: $beige;
+$border-color-2: $beige;
+$border-color-3: $beige;
+$outer-border-color: $beige;
 
 $sidebar-color: $gray-1;
 
 $dashboard-profile-header-image: none;
 $dashboard-profile-header-color: $sandstone-25;
 $dashboard-profile-color: $gray-3;
-$dot-color: $beige-60;
+$dot-color: $beige;
 
 $course-bg-color: $gray-3;
 $course-bg-image: none;
@@ -209,6 +212,23 @@ body > header > nav > ol.left.nav-global > li.nav-global-04 { display: none; }
 @mixin footer_references_style {
     margin: 0 !important;
     text-align: right;
+}
+
+// Header navigation style
+header.global-new {
+    border-color: $dark-red;
+}
+
+header.global.slim {
+    border-color: $sandstone !important;
+}
+
+header.global-new .nav-global li a, header.global-new .nav-courseware li a {
+	border-color: $sandstone;
+}
+
+header.global.slim h2 {
+	color: $dark-red !important;
 }
 
 //-----------------
