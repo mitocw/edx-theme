@@ -1,5 +1,5 @@
 /****************************************************************************************************
-*   MItx Theming File
+*   MITx Theming File
 *
 *   Contains all the theme color definitions for the MITx Open Source MOOC Project
 *
@@ -18,12 +18,12 @@ $cardinal-bg: #A31F34; //Selected Content BG Color, ie. calendar          ***Cus
 //MIT PMS 420 Color Variables
 $beige: #c2c0bf;
 $beige-60: lighten($beige, 18.5%); //Main Border/HR Color
-$beige-25: lighten($beige, 25%); 
+$beige-25: lighten($beige, 25%);
 
 //MIT PMS 424 Color Variables
 $sandstone: #8a8b8c;
 $sandstone-50: lighten($sandstone, 9%);
-$sandstone-25: lighten($sandstone, 20%); //Important Heading BG Color 
+$sandstone-25: lighten($sandstone, 20%); //Important Heading BG Color
 
 //Gray Color Variables
 $gray: #3f3c30; //Main Text Color
@@ -186,7 +186,7 @@ $footer_margin: ($baseline/4) 0;
 //-----------------
 $homepage-bg-image: url('../themes/mitx/images/mitx-pano4grey2.jpeg');
 
-// Resize 
+// Resize
 body .find-courses header.search, .university-profile header.search { height: 100px; }
 #content > section.home > header { height: 100px; }
 
@@ -243,4 +243,45 @@ header.search {
 height: 100px;
 margin-top: 132px;
 background-position: center top !important;
+}
+
+
+//-----------------
+//  Print media adjustments
+//-----------------
+@media print {
+  /* Hide stuff */
+  .wrapper-footer { display:none !important;} /* Footer */
+  .calc { display:none !important;} /* Calculator */
+  .wrap-instructor-info { display:none !important;} /* Instructor tools */
+  nav { display:none !important;} /* Navigation elements */
+  .course-index { display:none !important;} /* Sidebar */
+  .action { display:none !important;} /* Buttons (Check, Save, etc) */
+  [id^='display'].equation { display:none !important;} /* Equation previews */
+  .donotprint { display:none !important;} /* Anything with class "donotprint" */
+  a[href]:after {content: "" !important;} /* Fixes link display */
+  .vert .xmodule_LTIModule {display: none !important;} /* Suppresses LTI components */
+  .xmodule_DiscussionModule {display: none !important;} /* Suppresses discussion elements */
+  .info-wrapper.handouts {display: none !important;} /* Suppresses handouts in welcome page */
+
+  /* Fix some borders */
+  .course-wrapper, .static_tab_wrapper, .info-wrapper {border: 0px !important;} /* Remove ugly border */
+  .vert {border: 0 !important;} /* Removes grey lines underneath each entry in a vertical */
+
+  /* Fix the heading */
+  header.global nav { display: table !important; margin: 0;} /* Keep heading, move to left */
+  header.global nav ol { display: none !important;} /* Kill navigational elements in the heading */
+
+  /* Fix some whitespace issues */
+  .container { padding:0 !important;} /* Remove some padding beneath the heading */
+  #course-content { padding: 20px !important;} /* Remove some padding around the margins */
+
+  /* Reduce whitespace around paragraphs */
+  p {margin: 0 0 16px 0 !important;}
+  p + p, ul + p, ol + p { margin-top: 16px !important;}
+
+  /* Fix the whitespace around mathjax equations (not the inline variety) */
+  table.equation {margin: 0 !important;}
+  td.equation {padding: 0 !important;}
+  div.MathJax_Display {margin: 0 !important;}
 }
