@@ -274,7 +274,8 @@ background-position: center top !important;
 
   /* Fix some whitespace issues */
   .container { padding:0 !important;} /* Remove some padding beneath the heading */
-  #course-content { padding: 20px !important;} /* Remove some padding around the margins */
+  #course-content { padding: 10px 10px 0 10px !important;} /* Remove some padding around the margins and bottom of page */
+  #content-wrapper { padding: 0 !important;} /* Remove whitespace at the bottom of the page */
 
   /* Reduce whitespace around paragraphs */
   p {margin: 0 0 16px 0 !important;}
