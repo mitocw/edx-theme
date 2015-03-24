@@ -295,7 +295,7 @@ background-position: center top !important;
 //-----------------
 //  Fixing Mathjax CSS
 //-----------------
-
-div > span.MathJax_Preview {
+.xmodule_display.xmodule_CapaModule div.problem div > span.MathJax,
+.xmodule_display.xmodule_CapaModule div.problem div > span.MathJax_Preview {
   display:inline !important;
 }
