@@ -266,7 +266,11 @@ background-position: center top !important;
 
   /* Fix some borders */
   .course-wrapper, .static_tab_wrapper, .info-wrapper {border: 0px !important;} /* Remove ugly border */
-  .vert {border: 0 !important;} /* Removes grey lines underneath each entry in a vertical */
+  .vert {
+    border: 0 !important; /* Removes grey lines underneath each entry in a vertical */
+    margin-bottom: 0 !important; /* Removes some whitespace at the end of a vertical, which can lead to blank trailing pages */
+    padding-bottom: 0 !important; /* Removes some whitespace at the end of a vertical, which can lead to blank trailing pages */
+  }
 
   /* Fix the heading */
   header.global nav { display: table !important; margin: 0;} /* Keep heading, move to left */
@@ -275,7 +279,7 @@ background-position: center top !important;
   /* Fix some whitespace issues */
   .container { padding:0 !important;} /* Remove some padding beneath the heading */
   #course-content { padding: 10px 10px 0 10px !important;} /* Remove some padding around the margins and bottom of page */
-  #content-wrapper { padding: 0 !important;} /* Remove whitespace at the bottom of the page */
+  .content-wrapper { padding: 0 !important;} /* Remove whitespace at the bottom of the page */
 
   /* Reduce whitespace around paragraphs */
   p {margin: 0 0 16px 0 !important;}
@@ -287,8 +291,7 @@ background-position: center top !important;
   div.MathJax_Display {margin: 0 !important;}
 
   /* Fix the margin on a printed page, taking it from the boneheaded 0.5 cm edX default to something useful */
-  @page {margin: 1.5cm 1.2cm 2cm !important;}
-
+  @page {margin: 1cm 1.2cm 2cm !important;}
 }
 
 
