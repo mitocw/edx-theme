@@ -229,6 +229,17 @@ header.global.slim h2 {
 	color: $dark-red !important;
 }
 
+// For cypress theming onwards
+#global-navigation > nav > ol.left.nav-global > li a {
+    border-bottom: 4px solid $sandstone;
+    padding-bottom: 21px;
+    font-size: 18px;
+}
+
+header#global-navigation {
+    border-bottom: 4px solid $dark-red;
+}
+
 //-----------------
 //  Hiding modal
 //-----------------
