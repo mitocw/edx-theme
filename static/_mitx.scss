@@ -281,3 +281,13 @@ background-position: center top !important;
         display: none;
     }
 }
+
+// PR https://github.com/edx/edx-platform/pull/7594
+div.problem .inline + p {
+    margin-top: $baseline;
+}
+
+// PR https://github.com/edx/edx-platform/pull/7593
+div.problem div.inline > span {
+    display: inline;
+}
