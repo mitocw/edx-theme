@@ -1,5 +1,5 @@
 /****************************************************************************************************
-*   MItx Theming File
+*   MITx Theming File
 *
 *   Contains all the theme color definitions for the MITx Open Source MOOC Project
 *
@@ -18,12 +18,12 @@ $cardinal-bg: #A31F34; //Selected Content BG Color, ie. calendar          ***Cus
 //MIT PMS 420 Color Variables
 $beige: #c2c0bf;
 $beige-60: lighten($beige, 18.5%); //Main Border/HR Color
-$beige-25: lighten($beige, 25%); 
+$beige-25: lighten($beige, 25%);
 
 //MIT PMS 424 Color Variables
 $sandstone: #8a8b8c;
 $sandstone-50: lighten($sandstone, 9%);
-$sandstone-25: lighten($sandstone, 20%); //Important Heading BG Color 
+$sandstone-25: lighten($sandstone, 20%); //Important Heading BG Color
 
 //Gray Color Variables
 $gray: #3f3c30; //Main Text Color
@@ -186,7 +186,7 @@ $footer_margin: ($baseline/4) 0;
 //-----------------
 $homepage-bg-image: url('../themes/mitx/images/mitx-pano4grey2.jpeg');
 
-// Resize 
+// Resize
 body .find-courses header.search, .university-profile header.search { height: 100px; }
 #content > section.home > header { height: 100px; }
 
@@ -254,4 +254,30 @@ header.search {
 height: 100px;
 margin-top: 132px;
 background-position: center top !important;
+}
+
+//--------------
+// Jolyon's PRs
+//--------------
+
+@media print {
+    // PR https://github.com/edx/edx-platform/pull/8972
+    .xblock-student_view-discussion, .wrapper-preview-menu {
+        display: none;
+    }
+
+    div.problem .action {
+        .save, .check, .show, .reset, .hint-button {
+            display: none;
+        }
+    }
+
+    div.course-wrapper section.course-content {
+        padding: 4mm 2mm 0;
+    }
+
+    // PR https://github.com/edx/edx-platform/pull/8970
+    .wrapper-footer {
+        display: none;
+    }
 }
