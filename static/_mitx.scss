@@ -288,6 +288,6 @@ div.problem .inline + p {
 }
 
 // PR https://github.com/edx/edx-platform/pull/7593
-div.problem div.inline > span {
+.xmodule_display.xmodule_CapaModule div.problem div.inline > span {
     display: inline;
 }
