@@ -291,3 +291,8 @@ div.problem .inline + p {
 .xmodule_display.xmodule_CapaModule div.problem div.inline > span {
     display: inline;
 }
+
+// PR https://github.com/edx/edx-platform/pull/9122
+.xmodule_display.xmodule_CapaModule .problem .inputtype.option-input .indicator-container .status.unanswered:after {
+    margin-left: 0;
+}
