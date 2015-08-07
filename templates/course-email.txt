@@ -1,0 +1,6 @@
+{course_title}
+
+{{message_body}}
+----
+You are receiving this email at address {email} because you are enrolled in {course_title}
+(URL: {course_url} ).
