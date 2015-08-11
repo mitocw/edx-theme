@@ -296,3 +296,7 @@ div.problem .inline + p {
 .xmodule_display.xmodule_CapaModule .problem .inputtype.option-input .indicator-container .status.unanswered:after {
     margin-left: 0;
 }
+
+// Hide `Account Settings` and `My Profile` from user
+#global-navigation > nav > ol.user > li:nth-child(2) > ul > li:nth-child(1) { display: none; }
+#global-navigation > nav > ol.user > li:nth-child(2) > ul > li:nth-child(2) { display: none; }
