@@ -300,5 +300,11 @@ div.problem .inline + p {
 }
 
 // Hide `Account Settings` and `My Profile` from user
-#global-navigation > nav > ol.user > li:nth-child(2) > ul > li:nth-child(1) { display: none; }
-#global-navigation > nav > ol.user > li:nth-child(2) > ul > li:nth-child(2) { display: none; }
+#global-navigation > nav > ol.user > li:nth-child(2) > ul > li:nth-child(1) {
+    display: none;
+}
+#global-navigation > nav > ol.user > li:nth-child(2) > ul > li:nth-child(2) {
+    display: none;
+}
+// Hide user profile information box from dashboard
+#profile-sidebar { display: none }
