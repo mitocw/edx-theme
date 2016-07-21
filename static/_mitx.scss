@@ -1,29 +1,29 @@
 /****************************************************************************************************
-*   Stanford Theming File
+*   MITx Theming File
 *
-*   Contains all the theme color definitions for the Stanford Open Source MOOC Project
+*   Contains all the theme color definitions for the MITx Open Source MOOC Project
 *
 ****************************************************************************************************/
 
 //-----------------
-//  Color variables (from Stanford palette unless noted)
+//  Color variables (from MIT palette unless noted)
 //-----------------
 
 //Cardinal Color Variables
-$cardinal-red: #8C1515;
-$dark-red: #820000; //Link Color
-$cardinal-light: #c83737; //Selected Header BG Color, ie. calendar        ***Custom, not from palette***
-$cardinal-bg: #e9afaf; //Selected Content BG Color, ie. calendar          ***Custom, not from palette***
+$cardinal-red: #A31F34;
+$dark-red: #A31F34; //Link Color
+$cardinal-light: #A31F34; //Selected Header BG Color, ie. calendar        ***Custom, not from palette***
+$cardinal-bg: #A31F34; //Selected Content BG Color, ie. calendar          ***Custom, not from palette***
 
-//Beige Color Variables
-$beige: #9d9573;
+//MIT PMS 420 Color Variables
+$beige: #c2c0bf;
 $beige-60: lighten($beige, 18.5%); //Main Border/HR Color
-$beige-25: lighten($beige, 25%); 
+$beige-25: lighten($beige, 25%);
 
-//Sandstone Color Variables
-$sandstone: #ddcf99;
+//MIT PMS 424 Color Variables
+$sandstone: #8a8b8c;
 $sandstone-50: lighten($sandstone, 9%);
-$sandstone-25: lighten($sandstone, 20%); //Important Heading BG Color 
+$sandstone-25: lighten($sandstone, 20%); //Important Heading BG Color
 
 //Gray Color Variables
 $gray: #3f3c30; //Main Text Color
@@ -56,7 +56,7 @@ $serif: $theme-serif-font, $serif;
 //  Theme Element Assignments
 //-----------------
 
-$body-bg: $gray-1;
+$body-bg: $gray-3;
 $container-bg: $gray-1;
 $login-register-bg: $gray-1;
 $content-wrapper-bg: $gray-1;
@@ -90,6 +90,9 @@ $header-graphic-sub-color: $lighter-base-font-color;
 
 $header-link-color: $dark-red;
 $header-link-hover: $cardinal-light;
+
+$courseware-hover-color: $dark-red;
+$courseware-navigation-color: $lighter-base-font-color;
 
 $button-color: $cardinal-red;
 $button-archive-color: $gray-3;
@@ -145,17 +148,17 @@ $action-secondary-disabled-fg: $gray;
 
 //
 
-$border-color-1: $beige-60;
-$border-color-2: $beige-60;
-$border-color-3: $beige-60;
-$outer-border-color: $beige-60;
+$border-color-1: $beige;
+$border-color-2: $beige;
+$border-color-3: $beige;
+$outer-border-color: $beige;
 
 $sidebar-color: $gray-1;
 
 $dashboard-profile-header-image: none;
 $dashboard-profile-header-color: $sandstone-25;
 $dashboard-profile-color: $gray-3;
-$dot-color: $beige-60;
+$dot-color: $beige;
 
 $course-bg-color: $gray-3;
 $course-bg-image: none;
@@ -173,7 +176,7 @@ $form-bg-color: $gray-1;
 $modal-bg-color: $gray-1;
 
 //TOP HEADER IMAGE MARGIN
-$header_image_margin: -77px;
+$header_image_margin: 0px;
 
 //FOOTER MARGIN
 $footer_margin: ($baseline/4) 0;
@@ -181,12 +184,18 @@ $footer_margin: ($baseline/4) 0;
 //-----------------
 //  CSS BG Images
 //-----------------
-$homepage-bg-image: '../themes/stanford/images/stanford-pano.jpg';
+$homepage-bg-image: url('../themes/mitx/images/mitx-pano4grey2.jpeg');
+
+// Resize
+body .find-courses header.search, .university-profile header.search { height: 100px; }
+#content > section.home > header { height: 100px; }
+
+// Hide Video title
+#content > section.home > header > div > div { visibility: hidden; }
 
 $login-banner-image: none;
 $register-banner-image: none;
 
-$video-thumb-url: '../themes/stanford/images/stanford-video-thumb.png';
 
 //-----------------
 //  Mixin Styles
@@ -202,3 +211,98 @@ $video-thumb-url: '../themes/stanford/images/stanford-video-thumb.png';
     margin: 0 !important;
     text-align: right;
 }
+
+// Header navigation style
+header.global-new {
+    border-color: $dark-red;
+}
+
+header.global.slim {
+    border-color: $sandstone !important;
+}
+
+header.global-new .nav-global li a, header.global-new .nav-courseware li a {
+	border-color: $sandstone;
+}
+
+header.global.slim h2 {
+	color: $dark-red !important;
+}
+
+// For cypress theming onwards
+#global-navigation > nav > ol.left.nav-global > li a {
+    border-bottom: 4px solid $sandstone;
+    padding-bottom: 21px;
+    font-size: 18px;
+}
+
+header#global-navigation {
+    border-bottom: 4px solid $dark-red;
+}
+
+//-----------------
+//  Hiding modal
+//-----------------
+section.find-courses header.search div.main-search {
+    visibility: hidden;
+}
+
+//-----------------
+//  courses image adjustment
+//-----------------
+header.search {
+height: 100px;
+margin-top: 132px;
+background-position: center top !important;
+}
+
+//--------------
+// Jolyon's PRs
+//--------------
+
+@media print {
+    // PR https://github.com/edx/edx-platform/pull/8972
+    .xblock-student_view-discussion, .wrapper-preview-menu {
+        display: none;
+    }
+
+    div.problem .action {
+        .save, .check, .show, .reset, .hint-button {
+            display: none;
+        }
+    }
+
+    div.course-wrapper section.course-content {
+        padding: 4mm 2mm 0 !important;
+    }
+
+    // PR https://github.com/edx/edx-platform/pull/8970
+    .wrapper-footer {
+        display: none;
+    }
+}
+
+// PR https://github.com/edx/edx-platform/pull/7594
+div.problem .inline + p {
+    margin-top: $baseline;
+}
+
+// PR https://github.com/edx/edx-platform/pull/7593
+.xmodule_display.xmodule_CapaModule div.problem div.inline > span {
+    display: inline;
+}
+
+// PR https://github.com/edx/edx-platform/pull/9122
+.xmodule_display.xmodule_CapaModule .problem .inputtype.option-input .indicator-container .status.unanswered:after {
+    margin-left: 0;
+}
+
+// Hide `Account Settings` and `My Profile` from user
+#global-navigation > nav > ol.user > li:nth-child(2) > ul > li:nth-child(1) {
+    display: none;
+}
+#global-navigation > nav > ol.user > li:nth-child(2) > ul > li:nth-child(2) {
+    display: none;
+}
+// Hide user profile information box from dashboard
+#profile-sidebar { display: none }
