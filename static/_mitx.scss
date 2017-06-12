@@ -256,47 +256,6 @@ margin-top: 132px;
 background-position: center top !important;
 }
 
-//--------------
-// Jolyon's PRs
-//--------------
-
-@media print {
-    // PR https://github.com/edx/edx-platform/pull/8972
-    .xblock-student_view-discussion, .wrapper-preview-menu {
-        display: none;
-    }
-
-    div.problem .action {
-        .save, .check, .show, .reset, .hint-button {
-            display: none;
-        }
-    }
-
-    div.course-wrapper section.course-content {
-        padding: 4mm 2mm 0 !important;
-    }
-
-    // PR https://github.com/edx/edx-platform/pull/8970
-    .wrapper-footer {
-        display: none;
-    }
-}
-
-// PR https://github.com/edx/edx-platform/pull/7594
-div.problem .inline + p {
-    margin-top: $baseline;
-}
-
-// PR https://github.com/edx/edx-platform/pull/7593
-.xmodule_display.xmodule_CapaModule div.problem div.inline > span {
-    display: inline;
-}
-
-// PR https://github.com/edx/edx-platform/pull/9122
-.xmodule_display.xmodule_CapaModule .problem .inputtype.option-input .indicator-container .status.unanswered:after {
-    margin-left: 0;
-}
-
 // Hide `Account Settings` and `My Profile` from user
 #global-navigation > nav > ol.user > li:nth-child(2) > ul > li:nth-child(1) {
     display: none;
