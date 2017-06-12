@@ -1,3 +1,8 @@
+Obsolete
+========
+MIT no longer uses this theme for Residential MITx. See https://github.com/mitodl/mitx-theme 
+for the current theme (as of August 2016).
+
 Overview
 ========
 This directory stores Stanford's theming files for its edX instance.
